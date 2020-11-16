@@ -7,6 +7,11 @@ data = pd.read_csv('data.csv', names=['title', 'link', 'author', 'date',
                             
 app = flask.Flask(__name__)
 
-@app.route('/headline', methods=['GET'])
+@app.route('/news_article', methods=['GET'])
 def home():
-    return random.choice(data.title)      
+    return {
+        "headline": random.choice(data.title),
+        "image": random.choice(data.image),
+        "caption": random.choice(data.imagecaption),
+        "article": random.choice(data.article),
+    }     
