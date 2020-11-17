@@ -10,8 +10,8 @@ app = flask.Flask(__name__)
 def home():
     data = getRandomNews()
     return {
-        "headline": random.choice(data["title"]),
-        "image": random.choice(data["image"]),
-        "caption": random.choice(data["caption"]),
-        "article": random.choice(data["article"]),
+        "headline": data["title"],
+        "image": data["image"],
+        "caption": data["caption"],
+        "article": data["article"],
     }     
