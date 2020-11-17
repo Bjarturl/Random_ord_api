@@ -25,11 +25,11 @@ def getArticle():
         content = f1.read().split("\n")
         maxlen = 1000 if len(content) < 1000 else len(content)
         index = random.randint(0, len(content) - maxlen)
-        content = content[index:index+200]
+        content = content[index:index+100]
     data = None
     while data == None:
         model = markovify.NewlineText(content, retain_original=False)
-        data = model.make_short_sentence(min_chars=1000, max_chars=2500)
+        data = model.make_sentence(max_length=2000)
     return model.sentence_split(data)[0].split(". ")
 
 
