@@ -4,6 +4,8 @@ import pandas as pd
 import random
 from newsGenerator import getRandomNews
 
+# data = getRandomNews()
+# print(data)
 app = flask.Flask(__name__)
 
 @app.route('/news_article', methods=['GET'])
