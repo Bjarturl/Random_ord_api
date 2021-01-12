@@ -1,19 +1,14 @@
 import flask
 from flask import request
-import pandas as pd
-import random
-from newsGenerator import getRandomNews
+from helpers import get_random_word_from_file
 
-# data = getRandomNews()
-# print(data)
 app = flask.Flask(__name__)
-
-@app.route('/news_article', methods=['GET'])
+@app.route('/random_ord', methods=['GET'])
 def home():
-    data = getRandomNews()
+    word = get_random_word_from_file()
     return {
-        "headline": data["title"],
-        "image": data["image"],
-        "caption": data["caption"],
-        "article": data["article"],
+        "ord": word.strip()
     }     
+
+if __name__ == "__main__":
+    app.run(debug=False)
