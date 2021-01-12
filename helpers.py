@@ -8,7 +8,7 @@ def generate_word_files():
     word_number = 0 
     file_number = 1 
     f = None
-    MAX = 20000 # Determines the max number of words per file
+    MAX = 15000 # Determines the max number of words per file
     for d in data["list"]:
         if word_number % MAX == 0:
             if f:
