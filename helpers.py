@@ -1,6 +1,7 @@
 import os
 import random
 import requests
+
 # Fetches a list of all words from an api and splits them into files
 def generate_word_files():
     url = "https://www.tilvitnun.is/Api/GetSearchWords?searchType=A&word="
